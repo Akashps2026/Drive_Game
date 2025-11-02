@@ -7,7 +7,8 @@ public class GameManager : MonoBehaviour
     public float SpawnDistance = 120f;
     public Transform PlayerTransform;
     public GameObject gameOverPanel;
-
+    public Light Sun;
+    public float RotateSpeed;
     private Vector3 nextSpawnPosition;
 
     void Start()
@@ -40,6 +41,7 @@ public class GameManager : MonoBehaviour
     {
         if (PlayerTransform.position.z + SpawnDistance > nextSpawnPosition.z)
             SpawnGround();
+        Sun.transform.Rotate(Vector3.right*Time.deltaTime);
     }
 
     void SpawnGround()

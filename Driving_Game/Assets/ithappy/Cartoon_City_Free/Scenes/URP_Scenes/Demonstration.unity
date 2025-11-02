@@ -2296,6 +2296,8 @@ MonoBehaviour:
   SpawnDistance: 120
   PlayerTransform: {fileID: 1491405025}
   gameOverPanel: {fileID: 632174744}
+  Sun: {fileID: 705507994}
+  RotateSpeed: 3
 --- !u!1 &429094065
 GameObject:
   m_ObjectHideFlags: 0
@@ -3885,7 +3887,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.78113204, g: 0.6692285, b: 0.36403698, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -3948,13 +3950,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 26.9, z: -10.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &705507996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7840,7 +7842,7 @@ MonoBehaviour:
   Vertical: 0
   rb: {fileID: 1491405024}
   hitSound: {fileID: 1491405027}
-  Sound: {fileID: 0}
+  Sound: {fileID: 1491405028}
 --- !u!82 &1491405027
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7948,12 +7950,12 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 985924afe4cfac9438fbd469531035de, type: 3}
+  m_Resource: {fileID: 8300000, guid: 985924afe4cfac9438fbd469531035de, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.66
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -10504,7 +10506,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7495443279060062592, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
       propertyPath: m_Constraints
-      value: 112
+      value: 116
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

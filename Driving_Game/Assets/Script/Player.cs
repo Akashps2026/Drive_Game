@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 
 public class Player : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Player : MonoBehaviour
     public AudioSource hitSound; 
     public AudioSource Sound;
     private bool hasHit = false;
+   
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,6 +25,11 @@ public class Player : MonoBehaviour
     {
         Horizontal = Input.GetAxis("Horizontal");
         Vertical = Input.GetAxis("Vertical");
+
+       bool Break= Input.GetKey(KeyCode.Space);
+        
+           
+        
         Vector3 Move=new Vector3(Horizontal,0,Vertical);
         transform.Translate(Move*speed*Time.deltaTime);
     }
