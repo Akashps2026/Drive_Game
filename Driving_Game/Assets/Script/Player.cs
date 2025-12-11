@@ -14,13 +14,13 @@ public class Player : MonoBehaviour
     private bool hasHit = false;
    
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+   
     void Start()
     {
         rb.GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         Horizontal = Input.GetAxis("Horizontal");
@@ -45,14 +45,14 @@ public class Player : MonoBehaviour
                 hitSound.Play();
             }
 
-            // 🕒 Wait a short delay before showing Game Over (so sound can play)
+           
             StartCoroutine(DelayGameOver());
         }
     }
 
     private System.Collections.IEnumerator DelayGameOver()
     {
-        yield return new WaitForSeconds(0.2f); // wait 0.4 seconds for sound
+        yield return new WaitForSeconds(0.2f); 
         FindObjectOfType<GameManager>().GameOver();
     }
 }

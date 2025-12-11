@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;  // ✅ Needed for Text UI
+using UnityEngine.UI; 
 
 public class GameManager : MonoBehaviour
 {
@@ -12,8 +12,8 @@ public class GameManager : MonoBehaviour
 
     [Header("UI Elements")]
     public GameObject gameOverPanel;
-    public Text scoreText;       // 🟢 Assign in Inspector
-    public Text highScoreText;   // 🟢 Assign in Inspector
+    public Text scoreText;       
+    public Text highScoreText;   
 
     [Header("Sun Rotation")]
     public Light Sun;
@@ -31,20 +31,20 @@ public class GameManager : MonoBehaviour
         if (gameOverPanel != null)
             gameOverPanel.SetActive(false);
 
-        // Load high score from saved data
+       
         highScore = PlayerPrefs.GetFloat("HighScore", 0f);
     }
 
     void Update()
     {
-        // ☀️ Rotate Sun
+       
         Sun.transform.Rotate(Vector3.right * RotateSpeed * Time.deltaTime);
 
-        // 🛣️ Spawn Ground as player moves
+       
         if (PlayerTransform.position.z + SpawnDistance > nextSpawnPosition.z)
             SpawnGround();
 
-        // 🧮 Update Score (based on player’s z position)
+        
         score = PlayerTransform.position.z;
         UpdateScoreUI();
     }
@@ -57,12 +57,12 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        Time.timeScale = 0f; // Pause game
+        Time.timeScale = 0f; 
 
         if (gameOverPanel != null)
             gameOverPanel.SetActive(true);
 
-        // 🏆 Save high score if beaten
+       
         if (score > highScore)
         {
             highScore = score;
